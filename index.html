@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6e6; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .tarjeta {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 77, 77, 0.2);
+            max-width: 400px;
+            width: 90%;
+            margin: 20px;
+        }
+        h1 {
+            color: #ff4d4d;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+        p {
+            color: #555;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .corazon {
+            color: #ff4d4d;
+            font-size: 60px;
+            animation: latido 1.5s infinite;
+            margin: 20px 0;
+            display: inline-block;
+        }
+        
+        /* Estilos nuevos para el peluche */
+        .peluche-container {
+            margin: 25px 0;
+        }
+        .peluche {
+            width: 150px; /* Puedes cambiar este número si quieres que la foto sea más grande o pequeña */
+            height: auto;
+            cursor: pointer;
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        /* Efecto al pasar el ratón por encima */
+        .peluche:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .instruccion {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .firma {
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #d63031;
+            font-weight: bold;
+        }
+        
+        @keyframes latido {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.25); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.25); }
+            60% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tarjeta">
+        <h1>¡Feliz Día del Amor!</h1>
+        
+        <div class="corazon">❤️</div>
+        
+        <p>Para la persona más increíble del mundo. Gracias por llenar mis días de luz, sacarme las mejores sonrisas y hacer que mi vida sea mucho más bonita desde que estás en ella.</p>
+        
+        <div class="peluche-container">
+            <img src="YO.png" alt="Mi peluche" class="peluche" onclick="reproducirAudio()">
+            <p class="instruccion">Toca el peluche 😉</p>
+        </div>
+        
+        <audio id="miAudio" src="AUDIO.mp3"></audio>
+
+        <div class="firma">¡Te amo muchísimo!</div>
+    </div>
+
+    <script>
+        function reproducirAudio() {
+            var audio = document.getElementById("miAudio");
+            // Esto hace que si le da varios clics seguidos, el audio se reinicie desde el principio
+            audio.currentTime = 0; 
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
